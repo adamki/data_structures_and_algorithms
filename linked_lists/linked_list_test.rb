@@ -1,6 +1,8 @@
 gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
+require './linked_list'
+require './node'
 
 class LinkedListTest < Minitest::Test
   attr_reader :list
@@ -10,13 +12,11 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_nodes_have_data
-    skip
     node = Node.new("pizza")
     assert_equal "pizza", node.data
   end
 
   def test_nodes_have_next_node
-    skip
     n1 = Node.new("pizza")
     n2 = Node.new("cats")
     n1.next_node = n2
@@ -25,14 +25,12 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_it_accepts_next_node_on_init
-    skip
     n1 = Node.new("pizza", Node.new("cats"))
     assert_equal "cats", n1.next_node.data
     assert_equal Node, n1.next_node.class
   end
 
   def test_it_starts_with_zero_elements
-    skip
     assert_equal 0, list.count
   end
 
@@ -42,14 +40,12 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_it_pushes_a_single_element_onto_a_list
-    skip
     list.push("pizza")
     assert_equal "pizza", list.head.data
     assert_equal 1, list.count
   end
 
   def test_it_pushes_two_elements
-    skip
     list.push("pizza")
     assert_equal "pizza", list.head.data
     list.push("stromboli")
@@ -57,7 +53,6 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_it_pushes_three_elements_onto_a_list
-    skip
     list.push("hello")
     assert_equal "hello", list.head.data
     list.push("world")
@@ -69,7 +64,6 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_it_adds_four_elements
-    skip
     list.push("hello")
     list.push("world")
     list.push("today")
@@ -80,7 +74,6 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_it_pops_the_last_element_from_the_list
-    skip
     list.push("hello")
     list.push("world")
     list.push("today")
@@ -90,7 +83,6 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_a_popped_element_is_removed
-    skip
     list.push("hello")
     output = list.pop
     assert_equal "hello", output
@@ -98,12 +90,10 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_it_pops_nil_when_there_are_no_elements
-    skip
     assert_nil list.pop
   end
 
   def test_it_deletes_a_solo_node
-    skip
     list.push("hello")
     list.delete("hello")
     assert_equal 0, list.count
@@ -118,7 +108,6 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_it_deletes_a_last_node
-    skip
     list.push("hello")
     list.push("world")
     list.push("today")
@@ -127,7 +116,6 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_it_deletes_a_middle_node
-    skip
     list.push("hello")
     list.push("world")
     list.push("today")
