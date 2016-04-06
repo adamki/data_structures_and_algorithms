@@ -1,4 +1,5 @@
 ## Tries
+Please see the link [here](https://github.com/turingschool/curriculum/blob/master/source/projects/complete_me.markdown)
 
 A Trie is a type of branching data structure often used for storing
 and querying words within a body of text. The name comes from the idea
@@ -94,3 +95,4 @@ end
 t.suggest("piz")
 => ["pizza", "pizzeria", "pizzicato"]
 ```
+
